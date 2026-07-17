@@ -164,66 +164,38 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Hình 1.jpg) */
+        /* Hero Section (Hình 1.jpg - Không có chữ đè lên) */
         #hero {
             height: 100vh;
+            width: 100%;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
             position: relative;
-            background-image: linear-gradient(to bottom, rgba(10, 10, 15, 0.2), rgba(10, 10, 15, 0.85)), url('Hình 1.jpg');
+            background-image: url('Hình 1.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-            text-align: center;
-            padding: 0 20px;
             z-index: 2;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1.2s forwards 0.3s;
-        }
-
-        .hero-title {
-            font-family: var(--font-serif);
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            text-shadow: 0 0 10px rgba(83, 181, 255, 0.3);
-        }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .scroll-down {
             position: absolute;
-            bottom: 40px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--text-muted);
-            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.8rem;
             animation: bounce 2s infinite;
             cursor: pointer;
+            z-index: 10;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        .scroll-down:hover {
+            color: var(--accent-blue);
         }
 
         /* Main Wrapper (back.jpg) */
@@ -708,13 +680,6 @@
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -749,9 +714,6 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .hero-title {
-                font-size: 2.8rem;
-            }
             .modal-body {
                 padding: 30px;
             }
@@ -763,9 +725,6 @@
             }
             .intro-cards {
                 grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 2.2rem;
             }
             .modal-title {
                 font-size: 1.6rem;
@@ -797,17 +756,9 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Hình 1.jpg làm ảnh nền tràn trang, không chứa chữ đè lên) -->
     <section id="hero">
-        <div class="hero-content">
-            <p class="hero-subtitle">Digital Portfolio</p>
-            <h1 class="hero-title">Đinh Thanh Huyền</h1>
-            <p class="hero-desc">Lưu trữ hành trình số hóa, tư duy sáng tạo và ứng dụng trí tuệ nhân tạo có trách nhiệm trong học tập.</p>
-            <a href="#about" class="btn-large-drive" style="background: transparent; border: 1px solid #fff; color: #fff;">
-                Bắt đầu khám phá <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-        <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();">
+        <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
@@ -932,7 +883,7 @@
                     </div>
                     <div class="card-body">
                         <div class="card-num">Bài tập 5 • Mục 5.4</div>
-                        <h3 class="card-title">Sáng tạo nội dung số bằng AI thế hệ mới</h3>
+                        <h3 class="card-title">Sáng tạo nội dung số bằng AI thế mới</h3>
                         <p class="card-desc">Tận dụng bộ ba ChatGPT, DALL-E 3 và Canva AI thiết kế ấn phẩm Infographic trực quan sinh động.</p>
                         <span class="card-footer">Xem chi tiết <i class="fas fa-arrow-right"></i></span>
                     </div>
