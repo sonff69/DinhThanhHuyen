@@ -188,9 +188,9 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Chiều dọc tràn đầy 100%, không bị crop ảnh gốc) */
+        /* Hero Section (Chiều dọc tràn tăng thêm 15% thành 115vh, chiều ngang tràn 100% không vệt đen) */
         #hero {
-            height: 100vh !important; 
+            height: 115vh !important; /* Tăng kích thước chiều dọc thêm 15% */
             width: 100% !important;
             max-width: none !important;
             margin: 0 !important;
@@ -200,8 +200,8 @@
             justify-content: center;
             position: relative;
             background-image: url('Hình 1.jpg');
-            background-size: 100% 100%; /* Ép tràn lấp hoàn toàn chiều dọc & chiều ngang mà không bị cắt lề */
-            background-position: center center;
+            background-size: cover;
+            background-position: center bottom; /* Luôn cố định lề dưới ảnh để váy không bị cắt */
             background-repeat: no-repeat;
             z-index: 2;
         }
@@ -224,12 +224,12 @@
             color: var(--accent-blue);
         }
 
-        /* Main Wrapper (back.jpg) - Áp dụng chung hình nền cho tất cả phần sau Hero */
+        /* Main Wrapper (Tất cả phần sau Hero dùng chung ảnh nền back.jpg) */
         main {
             position: relative;
-            background-image: url('back.jpg') !important; /* Dùng đúng cú pháp back.jpg không lớp phủ che khuất */
+            background-image: url('back.jpg'); /* Sử dụng cú pháp back.jpg đồng bộ */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             z-index: 3;
@@ -324,7 +324,7 @@
 
         /* GG Drive Callout */
         .drive-callout {
-            background: linear-gradient(135deg, rgba(83, 181, 255, 0.1), rgba(0, 229, 255, 0.05));
+            background: var(--glass-bg);
             border: 1px solid rgba(83, 181, 255, 0.25);
             border-radius: 24px;
             padding: 40px;
@@ -764,7 +764,7 @@
     <!-- Particle Background -->
     <div id="particles-container"></div>
 
-    <!-- Dynamic Island Floating Menu (Thanh điều hướng kiểu viên thuốc lơ lửng, đổi kích thước tinh tế khi cuộn) -->
+    <!-- Dynamic Island Floating Menu (Thanh điều hướng kiểu viên thuốc lơ lửng) -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Thanh Huyen.</a>
@@ -783,14 +783,14 @@
         </div>
     </header>
 
-    <!-- Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề, hiển thị toàn bộ kích thước ảnh gốc không bị crop) -->
+    <!-- Hero Section (Chiều dọc tràn 115% vh, chiều ngang 100% tràn lề, ảnh bắt đầu từ đỉnh trang) -->
     <section id="hero">
         <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Main Content Area with "back.jpg" background (Dùng chung một background cho tất cả phần sau Hero) -->
+    <!-- Main Content Area (Tất cả phần sau Hero dùng chung ảnh nền back.jpg) -->
     <main>
         
         <!-- About Section -->
