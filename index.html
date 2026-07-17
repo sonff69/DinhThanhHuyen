@@ -188,9 +188,9 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Chiều dọc full 100% vh, chiều ngang 100%, căn lề dưới ảnh) */
+        /* Hero Section (Chiều dọc tràn đầy 100%, không bị crop ảnh gốc) */
         #hero {
-            height: 100vh !important; /* Full 100% chiều dọc màn hình */
+            height: 100vh !important; 
             width: 100% !important;
             max-width: none !important;
             margin: 0 !important;
@@ -200,8 +200,8 @@
             justify-content: center;
             position: relative;
             background-image: url('Hình 1.jpg');
-            background-size: cover;
-            background-position: center bottom; /* Ưu tiên căn lề dưới để giữ trọn vẹn phần váy và vai */
+            background-size: 100% 100%; /* Ép tràn lấp hoàn toàn chiều dọc & chiều ngang mà không bị cắt lề */
+            background-position: center center;
             background-repeat: no-repeat;
             z-index: 2;
         }
@@ -224,12 +224,13 @@
             color: var(--accent-blue);
         }
 
-        /* Main Wrapper (back.jpg) */
+        /* Main Wrapper (back.jpg) - Áp dụng chung hình nền cho tất cả phần sau Hero */
         main {
             position: relative;
-            background-image: linear-gradient(to bottom, rgba(10, 10, 15, 0.95), rgba(15, 15, 25, 0.98)), url('back.jpg');
+            background-image: url('back.jpg') !important; /* Dùng đúng cú pháp back.jpg không lớp phủ che khuất */
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
             z-index: 3;
             border-top: 1px solid var(--glass-border);
@@ -782,14 +783,14 @@
         </div>
     </header>
 
-    <!-- Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề, ảnh bắt đầu từ đỉnh trang) -->
+    <!-- Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề, hiển thị toàn bộ kích thước ảnh gốc không bị crop) -->
     <section id="hero">
         <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Main Content Area with "back.jpg" background -->
+    <!-- Main Content Area with "back.jpg" background (Dùng chung một background cho tất cả phần sau Hero) -->
     <main>
         
         <!-- About Section -->
