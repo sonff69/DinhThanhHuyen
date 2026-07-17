@@ -81,48 +81,70 @@
             }
         }
 
-        /* Navigation */
+        /* Dynamic Island Floating Menu */
         header {
-            position: sticky;
-            top: 0;
-            width: 100%;
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 95%;
             z-index: 100;
-            background: #0a0a0f; /* Nền tối đặc để tách biệt hoàn toàn với ảnh bên dưới */
-            border-bottom: 1px solid var(--glass-border);
-            transition: all 0.4s ease;
+            background: rgba(10, 10, 15, 0.7);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px; /* Kiểu dáng viên thuốc Dynamic Island */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 6px 12px;
+        }
+
+        /* Khi cuộn màn hình xuống, Dynamic Island sẽ co lại tinh tế */
+        header.scrolled {
+            top: 14px;
+            background: rgba(5, 5, 8, 0.85);
+            border-color: rgba(83, 181, 255, 0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(83, 181, 255, 0.1);
+            padding: 4px 10px;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 24px;
+            gap: 24px;
+            width: 100%;
+            padding: 4px 12px;
         }
 
         .logo {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            transition: all 0.4s;
+        }
+
+        header.scrolled .logo {
+            font-size: 1.2rem;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 24px;
             align-items: center;
         }
 
         nav a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
@@ -150,13 +172,13 @@
         .btn-drive {
             background: linear-gradient(135deg, rgba(83, 181, 255, 0.2), rgba(0, 229, 255, 0.2));
             border: 1px solid var(--accent-blue);
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .btn-drive:hover {
@@ -166,7 +188,7 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề không vệt đen) */
+        /* Hero Section (Chiều dọc full 100% vh, chiều ngang 100%, căn lề dưới ảnh) */
         #hero {
             height: 100vh !important; /* Full 100% chiều dọc màn hình */
             width: 100% !important;
@@ -179,7 +201,7 @@
             position: relative;
             background-image: url('Hình 1.jpg');
             background-size: cover;
-            background-position: center center;
+            background-position: center bottom; /* Ưu tiên căn lề dưới để giữ trọn vẹn phần váy và vai */
             background-repeat: no-repeat;
             z-index: 2;
         }
@@ -741,7 +763,7 @@
     <!-- Particle Background -->
     <div id="particles-container"></div>
 
-    <!-- Header Navigation (Dạng bám dính ở trên cùng với nền đặc) -->
+    <!-- Dynamic Island Floating Menu (Thanh điều hướng kiểu viên thuốc lơ lửng, đổi kích thước tinh tế khi cuộn) -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Thanh Huyen.</a>
@@ -752,7 +774,7 @@
                     <li><a href="#reflection">Tổng kết</a></li>
                     <li>
                         <a href="https://drive.google.com/drive/folders/1JF9Fz2FBrVvSBOxtoXiAt5vQLMoSPYhn?usp=drive_link" target="_blank" class="btn-drive">
-                            <i class="fab fa-google-drive"></i> Xem trên GG Drive
+                            <i class="fab fa-google-drive"></i> Drive
                         </a>
                     </li>
                 </ul>
@@ -760,7 +782,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Hình 1.jpg nằm khít dưới menu, chiều ngang tràn 100%, chiều dọc full 100% vh màn hình) -->
+    <!-- Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề, ảnh bắt đầu từ đỉnh trang) -->
     <section id="hero">
         <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
@@ -1272,7 +1294,7 @@ New Volume (E:) / Documents
             evt.currentTarget.classList.add('active');
         }
 
-        // Scroll animation triggers (Intersection Observer)
+        // Scroll animation triggers (Intersection Observer & Scroll Events)
         document.addEventListener("DOMContentLoaded", function() {
             createGlowParticles();
 
@@ -1286,6 +1308,16 @@ New Volume (E:) / Documents
             }, { threshold: 0.1 });
 
             reveals.forEach(reveal => observer.observe(reveal));
+
+            // Dynamic Island shrink effect on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
         });
     </script>
 </body>
