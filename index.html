@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đinh Thanh Huyền - Digital Portfolio</title>
+    <title>Đinh Thanh Huyền Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,15 @@
     
     <style>
         :root {
-            --bg-dark: #07060d; /* Nền tối chàm huyền ảo sâu thẳm */
-            --accent-violet: #b070ff; /* Luminous Lavender */
-            --accent-gold: #f5d061; /* Starlight Gold */
-            --text-light: #f3f4f6;
-            --text-muted: #9ca3af;
-            --glass-bg: rgba(13, 11, 26, 0.65);
-            --glass-border: rgba(176, 112, 255, 0.12); /* Viền kính tím ánh sáng */
-            --glass-border-gold: rgba(245, 208, 97, 0.15); /* Viền kính vàng starlight */
+            --bg-dark: #0c1a30; /* Màu nền xanh sẫm Sapphire rực rỡ, sáng rõ rệt hơn */
+            --accent-blue: #38bdf8; /* Luminous Cyan Blue phát sáng */
+            --accent-violet: #a855f7; /* Ánh tím hoa oải hương nhẹ */
+            --accent-gold: #fbbf24; /* Vàng Starlight sáng ấm */
+            --text-light: #f8fafc; /* Chữ sáng hơn để tăng độ tương phản đọc */
+            --text-muted: #cbd5e1; /* Chữ phụ Slate sáng hơn giúp giao diện sáng sủa */
+            --glass-bg: rgba(22, 42, 73, 0.7); /* Thẻ kính xanh sẫm trong suốt, rực rỡ hơn */
+            --glass-border: rgba(56, 189, 248, 0.2); /* Viền kính ánh xanh biển */
+            --glass-border-gold: rgba(251, 191, 36, 0.25); /* Viền kính ánh vàng */
             --font-sans: 'Plus Jakarta Sans', sans-serif;
             --font-serif: 'Playfair Display', serif;
         }
@@ -86,21 +87,21 @@
             width: auto;
             max-width: 95%;
             z-index: 100;
-            background: rgba(10, 10, 15, 0.75);
+            background: rgba(12, 26, 48, 0.8);
             backdrop-filter: blur(16px) saturate(180%);
             -webkit-backdrop-filter: blur(16px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 6px 12px;
         }
 
         header.scrolled {
             top: 14px;
-            background: rgba(5, 5, 8, 0.9);
-            border-color: rgba(176, 112, 255, 0.25);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(176, 112, 255, 0.15);
+            background: rgba(8, 18, 38, 0.95);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
             padding: 4px 10px;
         }
 
@@ -118,7 +119,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #fff 30%, var(--accent-violet));
+            background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -152,7 +153,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-violet);
+            background: var(--accent-blue);
             transition: width 0.3s;
         }
 
@@ -161,12 +162,12 @@
         }
 
         nav a:hover {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
         }
 
         .btn-drive {
-            background: linear-gradient(135deg, rgba(176, 112, 255, 0.2), rgba(245, 208, 97, 0.2));
-            border: 1px solid var(--accent-violet);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(251, 191, 36, 0.2));
+            border: 1px solid var(--accent-blue);
             padding: 6px 14px;
             border-radius: 30px;
             font-size: 0.8rem;
@@ -177,9 +178,9 @@
         }
 
         .btn-drive:hover {
-            background: linear-gradient(135deg, var(--accent-violet), var(--accent-gold));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
             color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(176, 112, 255, 0.4);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
             transform: translateY(-2px);
         }
 
@@ -216,13 +217,13 @@
         }
 
         .scroll-down:hover {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
         }
 
-        /* Main Content Container (Dùng chung background back.jpg) */
+        /* Main Content Container (Thay đổi màu nền xanh Sapphire rực rỡ và sáng hơn) */
         main {
             position: relative;
-            background-image: linear-gradient(to bottom, rgba(7, 6, 13, 0.96), rgba(15, 12, 30, 0.98)), url('back.jpg');
+            background-image: linear-gradient(to bottom, rgba(12, 26, 48, 0.82), rgba(15, 32, 60, 0.9)), url('back.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -245,7 +246,7 @@
         .section-tag {
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             text-transform: uppercase;
             letter-spacing: 3px;
             display: inline-block;
@@ -256,12 +257,12 @@
             font-family: var(--font-serif);
             font-size: 2.5rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #fff 60%, var(--accent-violet));
+            background: linear-gradient(135deg, #fff 60%, var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* THAY ĐỔI BỐ CỤC: Giới thiệu & Mục tiêu dạng Offset chồng lớp */
+        /* Giới thiệu & Mục tiêu dạng Offset chồng lớp */
         .intro-offset-grid {
             display: grid;
             grid-template-columns: 0.95fr 1.05fr;
@@ -270,11 +271,11 @@
         }
 
         .profile-card {
-            background: linear-gradient(145deg, rgba(20, 15, 40, 0.8), rgba(10, 8, 20, 0.9));
+            background: linear-gradient(145deg, rgba(22, 42, 73, 0.85), rgba(15, 32, 60, 0.95));
             border: 1px solid var(--glass-border);
             border-radius: 28px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.08);
             position: sticky;
             top: 100px;
         }
@@ -284,14 +285,14 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 25px;
         }
 
         .profile-avatar-mock {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--accent-violet), var(--accent-gold));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -324,11 +325,15 @@
             align-items: center;
             gap: 15px;
             font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .profile-info-item span {
             color: var(--text-muted);
         }
 
         .profile-info-item i {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             width: 20px;
             text-align: center;
         }
@@ -351,7 +356,7 @@
         .overlap-card:hover {
             transform: scale(1.02);
             border-color: var(--accent-gold);
-            box-shadow: 0 15px 30px rgba(245, 208, 97, 0.05);
+            box-shadow: 0 15px 30px rgba(251, 191, 36, 0.08);
         }
 
         .overlap-card.gold-border {
@@ -394,7 +399,7 @@
         }
 
         .objective-item i {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             margin-top: 5px;
         }
 
@@ -402,10 +407,10 @@
             color: #fff;
         }
 
-        /* THAY ĐỔI BỐ CỤC: Thiết kế lại Callout Google Drive thành dải băng bất đối xứng */
+        /* Dải băng bất đối xứng kết nối Google Drive */
         .drive-callout {
-            background: linear-gradient(135deg, rgba(176, 112, 255, 0.12), rgba(245, 208, 97, 0.04));
-            border: 1px solid rgba(176, 112, 255, 0.2);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(251, 191, 36, 0.05));
+            border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 30px;
             padding: 50px;
             display: flex;
@@ -441,7 +446,7 @@
             font-size: 1.05rem;
         }
 
-        /* THAY ĐỔI BỐ CỤC: Masonry Grid bất đối xứng cho Bài tập */
+        /* Masonry Grid bất đối xứng cho Bài tập */
         .assignments-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -469,13 +474,13 @@
 
         .assignment-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-violet);
-            box-shadow: 0 20px 40px rgba(176, 112, 255, 0.1);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
         }
 
         .card-visual {
             height: 180px;
-            background: linear-gradient(45deg, #100d21, #07060d);
+            background: linear-gradient(45deg, #102244, #081226);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -486,12 +491,12 @@
 
         .card-visual i {
             font-size: 3.5rem;
-            color: rgba(176, 112, 255, 0.15);
+            color: rgba(56, 189, 248, 0.2);
             transition: all 0.4s;
         }
 
         .assignment-card:hover .card-visual i {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             transform: scale(1.1) rotate(-5deg);
         }
 
@@ -527,10 +532,10 @@
             display: flex;
             align-items: center;
             font-size: 0.85rem;
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             font-weight: 500;
             gap: 5px;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 15px;
             margin-top: auto;
         }
@@ -542,7 +547,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(5, 5, 10, 0.94);
+            background: rgba(5, 12, 28, 0.94);
             backdrop-filter: blur(15px);
             z-index: 1000;
             display: flex;
@@ -560,7 +565,7 @@
         }
 
         .modal-content {
-            background: #090810;
+            background: #0a172c;
             border: 1px solid var(--glass-border);
             width: 100%;
             max-width: 1000px;
@@ -568,7 +573,7 @@
             border-radius: 28px;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             transform: scale(0.95);
             transition: all 0.4s ease;
         }
@@ -596,7 +601,7 @@
         }
 
         .close-modal:hover {
-            background: var(--accent-violet);
+            background: var(--accent-blue);
             color: var(--bg-dark);
         }
 
@@ -606,7 +611,7 @@
 
         .modal-tag {
             font-size: 0.8rem;
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -622,7 +627,7 @@
 
         /* Mockup elements inside modal */
         .mockup-box {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 24px;
@@ -632,7 +637,7 @@
         .mockup-title {
             font-size: 0.95rem;
             text-transform: uppercase;
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             letter-spacing: 1px;
             margin-bottom: 15px;
             display: flex;
@@ -655,13 +660,13 @@
         }
 
         th {
-            background-color: rgba(176, 112, 255, 0.08);
+            background-color: rgba(56, 189, 248, 0.12);
             color: #fff;
             font-weight: 600;
         }
 
         tr:hover {
-            background-color: rgba(255, 255, 255, 0.01);
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         /* Interactive tab inside prompt modal */
@@ -685,9 +690,9 @@
         }
 
         .tab-btn.active {
-            background: var(--accent-violet);
+            background: var(--accent-blue);
             color: var(--bg-dark);
-            border-color: var(--accent-violet);
+            border-color: var(--accent-blue);
             font-weight: 600;
         }
 
@@ -709,7 +714,7 @@
         }
 
         .explorer-tree {
-            background: #05040a;
+            background: #060b18;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 15px;
@@ -740,13 +745,13 @@
         }
 
         .step-pill:hover, .step-pill.active {
-            background: rgba(176, 112, 255, 0.1);
-            border-color: var(--accent-violet);
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--accent-blue);
             color: #fff;
         }
 
         .step-badge {
-            background: var(--accent-violet);
+            background: var(--accent-blue);
             color: var(--bg-dark);
             font-weight: bold;
             width: 20px;
@@ -778,17 +783,17 @@
         }
 
         .group-tool-card:hover, .group-tool-card.active {
-            border-color: var(--accent-violet);
-            background: rgba(176, 112, 255, 0.05);
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.08);
         }
 
         .group-tool-card i {
             font-size: 2rem;
-            color: var(--accent-violet);
+            color: var(--accent-blue);
             margin-bottom: 10px;
         }
 
-        /* THAY ĐỔI BỐ CỤC: Thiết kế lại Tổng kết thành Bộ 3 Tấm thẻ độc lập */
+        /* Tổng kết thành Bộ 3 Tấm thẻ độc lập */
         .triptych-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -809,7 +814,7 @@
         .triptych-card:hover {
             transform: translateY(-8px);
             border-color: var(--accent-gold);
-            box-shadow: 0 15px 30px rgba(245, 208, 97, 0.05);
+            box-shadow: 0 15px 30px rgba(251, 191, 36, 0.08);
         }
 
         .triptych-card h4 {
@@ -833,7 +838,7 @@
 
         .triptych-card.highlight {
             border-color: var(--accent-gold);
-            background: linear-gradient(to bottom, rgba(20, 15, 40, 0.7), rgba(7, 6, 13, 0.95));
+            background: linear-gradient(to bottom, rgba(22, 42, 73, 0.8), rgba(12, 26, 48, 0.98));
         }
 
         /* Interactive Checklist for Ethics */
@@ -851,13 +856,13 @@
             background: rgba(255,255,255,0.02);
             padding: 12px 18px;
             border-radius: 8px;
-            border-left: 3px solid var(--accent-violet);
+            border-left: 3px solid var(--accent-blue);
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .ethical-item:hover {
-            background: rgba(176, 112, 255, 0.05);
+            background: rgba(56, 189, 248, 0.05);
         }
 
         .ethical-item.checked i {
@@ -867,7 +872,7 @@
         /* Footer */
         footer {
             border-top: 1px solid var(--glass-border);
-            background: #040308;
+            background: #081122;
             padding: 40px 20px;
             text-align: center;
             position: relative;
@@ -893,7 +898,7 @@
         }
 
         footer .socials a:hover {
-            color: var(--accent-violet);
+            color: var(--accent-blue);
         }
 
         /* Animations */
@@ -989,10 +994,10 @@
         </div>
     </section>
 
-    <!-- Main Content Area (Dùng chung background back.jpg với thiết kế phối màu mới) -->
+    <!-- Main Content Area (Đồng bộ phối màu xanh Sapphire sẫm tươi sáng hơn) -->
     <main>
         
-        <!-- THAY ĐỔI BỐ CỤC: About & Objectives Offset Stack Section -->
+        <!-- About & Objectives Offset Stack Section -->
         <section id="about" class="reveal">
             <div class="section-header">
                 <span class="section-tag">Profile & Mission</span>
@@ -1065,7 +1070,7 @@
             </div>
         </section>
 
-        <!-- THAY ĐỔI BỐ CỤC: Dải băng bất đối xứng kết nối Google Drive -->
+        <!-- Dải băng bất đối xứng kết nối Google Drive -->
         <div class="drive-callout reveal">
             <div class="drive-text-side">
                 <h3>Thư mục lưu trữ gốc trên Google Drive</h3>
@@ -1078,7 +1083,7 @@
             </div>
         </div>
 
-        <!-- THAY ĐỔI BỐ CỤC: Danh mục bài tập lưới bất đối xứng -->
+        <!-- Danh mục bài tập lưới bất đối xứng -->
         <section id="projects" class="reveal">
             <div class="section-header">
                 <span class="section-tag">Interactive Portfolio</span>
@@ -1168,7 +1173,7 @@
             </div>
         </section>
 
-        <!-- THAY ĐỔI BỐ CỤC: Thiết kế lại Tổng kết thành Bộ 3 Tấm thẻ độc lập -->
+        <!-- Tổng kết ba cột dạng Triptych -->
         <section id="reflection" class="reveal">
             <div class="section-header">
                 <span class="section-tag">Unit reflection</span>
@@ -1198,7 +1203,7 @@
 
     </main>
 
-    <!-- Modals Section (Dùng phối màu Celestail Gold & Lavender) -->
+    <!-- Modals Section (Dùng phối màu Celestail Gold & Sapphire Blue) -->
     
     <!-- Modal 1: Bài 1 -->
     <div id="modal1" class="modal">
@@ -1216,7 +1221,7 @@
                     <!-- Trái: Giao diện giả lập Explorer -->
                     <div class="explorer-tree">
                         <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; margin-bottom: 10px; display: flex; justify-content: space-between;">
-                            <span><i class="fas fa-desktop" style="color: var(--accent-violet);"></i> Windows Explorer Simulator</span>
+                            <span><i class="fas fa-desktop" style="color: var(--accent-blue);"></i> Windows Explorer Simulator</span>
                             <span id="exp-path" style="color: var(--accent-gold);">Path: This PC</span>
                         </div>
                         <div id="exp-content">
@@ -1299,7 +1304,7 @@
 
                 <div class="mockup-box">
                     <div class="mockup-title"><i class="fas fa-search"></i> Tra cứu danh mục tương tác</div>
-                    <input type="text" id="ref-search" onkeyup="filterReferences()" placeholder="Tìm kiếm tác giả, từ khóa học thuật..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: #05040a; color: #fff; font-family: var(--font-sans); outline: none;">
+                    <input type="text" id="ref-search" onkeyup="filterReferences()" placeholder="Tìm kiếm tác giả, từ khóa học thuật..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: #060c17; color: #fff; font-family: var(--font-sans); outline: none;">
                 </div>
 
                 <div style="overflow-x: auto;">
@@ -1608,15 +1613,15 @@ Nhóm 2 CNS - Google Drive
                     <div class="mockup-title"><i class="fas fa-project-diagram"></i> Quy trình xâu chuỗi AI</div>
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <div>
-                            <strong style="color: var(--accent-violet);">Bước 1: ChatGPT (Biên tập & Chắt lọc nội dung)</strong>
+                            <strong style="color: var(--accent-blue);">Bước 1: ChatGPT (Biên tập & Chắt lọc nội dung)</strong>
                             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Sử dụng ChatGPT để lập dàn ý thô. Sau đó, chắt lọc văn bản thành các gạch đầu dòng siêu ngắn, súc tích (Luyện phát âm thông minh với ELSA Speak, Đối thoại chatbot ChatGPT, Dịch thuật ngữ pháp nhanh...) để phù hợp hoàn hảo với không gian thiết kế Infographic.</p>
                         </div>
                         <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
-                            <strong style="color: var(--accent-violet);">Bước 2: DALL-E 3 (Kiến tạo hình ảnh mỹ thuật)</strong>
+                            <strong style="color: var(--accent-blue);">Bước 2: DALL-E 3 (Kiến tạo hình ảnh mỹ thuật)</strong>
                             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Nhập prompt tiếng Anh chuyên sâu: <em>"Create a modern educational infographic illustration showing students learning foreign languages with AI, chatbot conversation, pronunciation practice, translation tools, bright colors, flat design."</em> nhằm tạo ra bức ảnh minh họa có độ phân giải cao, đúng chủ đề học ngoại ngữ hiện đại.</p>
                         </div>
                         <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
-                            <strong style="color: var(--accent-violet);">Bước 3: Canva AI (Tối ưu hóa bố cục thị giác)</strong>
+                            <strong style="color: var(--accent-blue);">Bước 3: Canva AI (Tối ưu hóa bố cục thị giác)</strong>
                             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Đưa đề xuất dàn ý vào Canva AI với lệnh <em>"Create an infographic about how AI changes language learning."</em> để thu về bố cục đề xuất. Sau đó, mình tự tay đổi tông màu sang màu xanh dương công nghệ, căn chỉnh cỡ chữ, chèn logo ứng dụng thực tế để tạo tính chuyên nghiệp.</p>
                         </div>
                     </div>
@@ -1701,7 +1706,7 @@ Nhóm 2 CNS - Google Drive
         function createGlowParticles() {
             const container = document.getElementById('particles-container');
             const particleCount = 20;
-            const colors = ['rgba(176, 112, 255, 0.4)', 'rgba(245, 208, 97, 0.4)', 'rgba(255, 255, 255, 0.5)'];
+            const colors = ['rgba(56, 189, 248, 0.5)', 'rgba(251, 191, 36, 0.5)', 'rgba(255, 255, 255, 0.6)'];
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
