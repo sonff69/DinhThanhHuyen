@@ -32,10 +32,13 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: var(--font-sans);
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
             background-color: var(--bg-dark);
             color: var(--text-light);
+            font-family: var(--font-sans);
             overflow-x: hidden;
             line-height: 1.6;
         }
@@ -80,12 +83,11 @@
 
         /* Navigation */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(10, 10, 15, 0.7);
-            backdrop-filter: blur(12px);
+            background: #0a0a0f; /* Nền tối đặc để tách biệt hoàn toàn với ảnh bên dưới */
             border-bottom: 1px solid var(--glass-border);
             transition: all 0.4s ease;
         }
@@ -164,19 +166,21 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Hình 1.jpg - Không có chữ đè lên) */
+        /* Hero Section (Tràn lấp 100% chiều rộng màn hình, không có vệt đen hai bên) */
         #hero {
-            height: 100vh;
-            width: 100%;
+            height: calc(100vh - 78px); /* Tự động tính toán để vừa khít màn hình dưới menu */
+            width: 100% !important;
+            max-width: none !important; /* Ghi đè cấu trúc giới hạn chiều rộng 1200px của thẻ section */
+            margin: 0 !important;
+            padding: 0 !important;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             position: relative;
             background-image: url('Hình 1.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             z-index: 2;
         }
 
@@ -737,7 +741,7 @@
     <!-- Particle Background -->
     <div id="particles-container"></div>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation (Dạng bám dính ở trên cùng với nền đặc) -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Thanh Huyen.</a>
@@ -756,7 +760,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Hình 1.jpg làm ảnh nền tràn trang, không chứa chữ đè lên) -->
+    <!-- Hero Section (Hình 1.jpg nằm khít dưới menu và tràn sát lề hai bên, không có chữ đè) -->
     <section id="hero">
         <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
