@@ -166,11 +166,11 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Tràn lấp 100% chiều rộng màn hình, không có vệt đen hai bên) */
+        /* Hero Section (Chiều dọc tràn 100% vh, chiều ngang 100% tràn lề không vệt đen) */
         #hero {
-            height: calc(100vh - 78px); /* Tự động tính toán để vừa khít màn hình dưới menu */
+            height: 100vh !important; /* Full 100% chiều dọc màn hình */
             width: 100% !important;
-            max-width: none !important; /* Ghi đè cấu trúc giới hạn chiều rộng 1200px của thẻ section */
+            max-width: none !important;
             margin: 0 !important;
             padding: 0 !important;
             display: flex;
@@ -760,7 +760,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Hình 1.jpg nằm khít dưới menu và tràn sát lề hai bên, không có chữ đè) -->
+    <!-- Hero Section (Hình 1.jpg nằm khít dưới menu, chiều ngang tràn 100%, chiều dọc full 100% vh màn hình) -->
     <section id="hero">
         <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView();" title="Cuộn xuống">
             <i class="fas fa-chevron-down"></i>
